@@ -30,6 +30,7 @@ class ArticleListActivity : BaseActivity() {
     override fun init() {
         handleError(viewModel)
         handleProgress(viewModel)
+        handleNoData(viewModel,noData)
 
         initToolbar()
         checkDeviceType()

@@ -1,6 +1,7 @@
 package com.moanes.nytimes.base
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
@@ -81,6 +82,15 @@ abstract class BaseActivity : AppCompatActivity() {
     fun handleError(viewModel: BaseViewModel) {
         viewModel.errorLiveData.observe(this, {
             showErrorToast(it)
+        })
+    }
+
+     fun handleNoData(viewModel: BaseViewModel,noData:View) {
+        viewModel.showNoData.observe(this, {
+            if (it)
+                noData.visibility = View.VISIBLE
+            else
+                noData.visibility = View.GONE
         })
     }
 }

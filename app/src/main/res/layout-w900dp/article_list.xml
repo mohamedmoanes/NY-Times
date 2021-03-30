@@ -13,6 +13,13 @@
     <!--
     This layout is a two-pane layout for the Articles master/detail flow.
     -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/noData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/no_articles"
+        android:visibility="gone" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/article_list"

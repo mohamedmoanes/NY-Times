@@ -8,71 +8,71 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class Article(
     @SerializedName("abstract")
-    var `abstract`: String,
+    var `abstract`: String="",
     @SerializedName("adx_keywords")
-    var adxKeywords: String,
+    var adxKeywords: String="",
     @SerializedName("asset_id")
-    var assetId: Long,
+    var assetId: Long=0,
     @SerializedName("byline")
-    var byline: String,
+    var byline: String="",
     @SerializedName("des_facet")
-    var desFacet: List<String>,
+    var desFacet: List<String> = ArrayList<String>(),
     @SerializedName("eta_id")
-    var etaId: Int,
+    var etaId: Int=0,
     @SerializedName("geo_facet")
-    var geoFacet: List<String>,
+    var geoFacet: List<String> = ArrayList<String>(),
     @SerializedName("id")
-    var id: Long,
+    var id: Long= 0 ,
     @SerializedName("media")
-    var media: List<Media>,
+    var media: List<Media> = ArrayList<Media>(),
     @SerializedName("nytdsection")
-    var nytdsection: String,
+    var nytdsection: String="",
     @SerializedName("org_facet")
-    var orgFacet: List<String>,
+    var orgFacet: List<String> = ArrayList<String>(),
     @SerializedName("per_facet")
-    var perFacet: List<String>,
+    var perFacet: List<String> = ArrayList<String>(),
     @SerializedName("published_date")
-    var publishedDate: String,
+    var publishedDate: String="",
     @SerializedName("section")
-    var section: String,
+    var section: String="",
     @SerializedName("source")
-    var source: String,
+    var source: String="",
     @SerializedName("subsection")
-    var subsection: String,
+    var subsection: String="",
     @SerializedName("title")
-    var title: String,
+    var title: String="",
     @SerializedName("type")
-    var type: String,
+    var type: String="",
     @SerializedName("updated")
-    var updated: String,
+    var updated: String="",
     @SerializedName("uri")
-    var uri: String,
+    var uri: String="",
     @SerializedName("url")
-    var url: String
+    var url: String=""
 ) : Parcelable {
     @Parcelize
     data class Media(
         @SerializedName("approved_for_syndication")
-        var approvedForSyndication: Int,
+        var approvedForSyndication: Int=0,
         @SerializedName("caption")
-        var caption: String,
+        var caption: String="",
         @SerializedName("copyright")
-        var copyright: String,
+        var copyright: String="",
         @SerializedName("media-metadata")
-        var mediaMetadata: List<MediaMetadata>,
+        var mediaMetadata: List<MediaMetadata> = ArrayList<MediaMetadata>(),
         @SerializedName("subtype")
-        var subtype: String,
+        var subtype: String="",
         @SerializedName("type")
-        var type: String
+        var type: String=""
     ) : Parcelable {
         @Parcelize
         data class MediaMetadata(
             @SerializedName("format")
-            var format: String,
+            var format: String="",
             @SerializedName("height")
-            var height: Int,
+            var height: Int=0,
             @SerializedName("url")
-            var url: String,
+            var url: String="",
             @SerializedName("width")
             var width: Int
         ) : Parcelable
