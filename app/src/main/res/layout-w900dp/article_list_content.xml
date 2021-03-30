@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="@dimen/_10sdp"
-    android:layout_marginVertical="@dimen/_5sdp"
+    android:layout_marginHorizontal="@dimen/_5sdp"
+    android:layout_marginVertical="@dimen/_2sdp"
     app:cardCornerRadius="@dimen/_12sdp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,42 +13,38 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/image"
-            android:layout_width="@dimen/_45sdp"
-            android:layout_height="@dimen/_45sdp"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
             android:layout_margin="@dimen/_10sdp"
-            app:srcCompat="@drawable/ic_image_placeholder"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.circularImage" />
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.circularImage"
+            app:srcCompat="@drawable/ic_image_placeholder" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_5sdp"
-            android:layout_marginVertical="@dimen/_10sdp"
-            android:textSize="@dimen/_14ssp"
-            android:textStyle="bold"
-            android:maxLines="2"
+            android:layout_margin="@dimen/_5sdp"
             android:ellipsize="end"
+            android:maxLines="2"
+            android:textStyle="bold"
             app:layout_constrainedWidth="true"
-            app:layout_constraintBottom_toTopOf="@id/abstractTV"
             app:layout_constraintEnd_toStartOf="@id/forward_arrow"
-            app:layout_constraintStart_toEndOf="@id/image"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/abstractTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_5sdp"
-            android:layout_marginVertical="@dimen/_10sdp"
-            app:layout_constrainedWidth="true"
-            android:maxLines="3"
+            android:layout_margin="@dimen/_5sdp"
             android:ellipsize="end"
+            android:maxLines="3"
+            app:layout_constrainedWidth="true"
             app:layout_constraintEnd_toStartOf="@id/forward_arrow"
-            app:layout_constraintStart_toEndOf="@id/image"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -57,10 +53,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_5sdp"
             app:layout_constrainedWidth="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/date"
             app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintStart_toEndOf="@id/image"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/abstractTV" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -71,15 +65,14 @@
             app:layout_constrainedWidth="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/forward_arrow"
-            app:layout_constraintStart_toEndOf="@id/writer"
-            app:layout_constraintTop_toBottomOf="@id/abstractTV" />
+            app:layout_constraintTop_toBottomOf="@id/writer" />
 
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/forward_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_10sdp"
+            android:layout_margin="@dimen/_2sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"

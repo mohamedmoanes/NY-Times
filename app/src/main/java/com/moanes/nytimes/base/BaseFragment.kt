@@ -1,4 +1,4 @@
-package com.developnetwork.leedo.base
+package com.moanes.nytimes.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,6 @@ import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.snackbar.Snackbar
-import com.moanes.nytimes.base.BaseActivity
 
 abstract class BaseFragment : Fragment() {
 
@@ -17,9 +16,9 @@ abstract class BaseFragment : Fragment() {
     abstract fun getLayout(): Int
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
 
         return inflater.inflate(getLayout(), container, false)

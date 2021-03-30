@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.moanes.nytimes">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".app.NYTimesApplication"
         android:allowBackup="true"
@@ -11,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NYTimes">
         <activity
-            android:name=".ArticleListActivity"
+            android:name=".ui.articleslist.ArticleListActivity"
             android:label="@string/title_article_list"
             android:theme="@style/Theme.NYTimes.NoActionBar">
             <intent-filter>
@@ -21,13 +23,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ArticleDetailActivity"
+            android:name=".ui.articledetail.ArticleDetailActivity"
             android:label="@string/title_article_detail"
-            android:parentActivityName=".ArticleListActivity"
+            android:parentActivityName=".ui.articleslist.ArticleListActivity"
             android:theme="@style/Theme.NYTimes.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moanes.nytimes.ArticleListActivity" />
+                android:value="com.moanes.nytimes.ui.articleslist.ArticleListActivity" />
         </activity>
     </application>
 

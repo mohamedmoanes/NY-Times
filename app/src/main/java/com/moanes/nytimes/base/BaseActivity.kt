@@ -5,6 +5,8 @@ import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.google.android.material.snackbar.Snackbar
 import com.moanes.nytimes.utils.views.ProgressDialog
 
 abstract class BaseActivity : AppCompatActivity() {
@@ -42,11 +44,11 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     open fun showErrorToast(@StringRes message: Int) {
-        Toast.makeText(this,message,Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
     open fun showErrorToast(message: String) {
-        Toast.makeText(this,message,Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
 
@@ -60,5 +62,25 @@ abstract class BaseActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         loadingDialog = null
+    }
+
+    fun handleProgress(viewModel: BaseViewModel, swipeRefreshLayout: SwipeRefreshLayout? = null) {
+        viewModel.showLoading.observe(this, {
+
+            swipeRefreshLayout?.let { swipeRefreshLayout ->
+                swipeRefreshLayout.isRefreshing = it
+            }
+
+            if (it)
+                showLoading()
+            else
+                hideLoading()
+        })
+    }
+
+    fun handleError(viewModel: BaseViewModel) {
+        viewModel.errorLiveData.observe(this, {
+            showErrorToast(it)
+        })
     }
 }

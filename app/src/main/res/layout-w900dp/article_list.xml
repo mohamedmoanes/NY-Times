@@ -4,28 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
     android:baselineAligned="false"
     android:divider="?android:attr/dividerHorizontal"
     android:orientation="horizontal"
     android:showDividers="middle"
-    tools:context=".ArticleListActivity">
+    tools:context=".ui.articleslist.ArticleListActivity">
 
     <!--
     This layout is a two-pane layout for the Articles master/detail flow.
     -->
 
-    <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/article_list"
         android:name="com.moanes.nytimes.ArticleListFragment"
         android:layout_width="@dimen/item_width"
         android:layout_height="match_parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
         app:layoutManager="LinearLayoutManager"
-        tools:context="com.moanes.nytimes.ArticleListActivity"
+        tools:context="com.moanes.nytimes.ui.articleslist.ArticleListActivity"
         tools:listitem="@layout/article_list_content" />
 
     <FrameLayout

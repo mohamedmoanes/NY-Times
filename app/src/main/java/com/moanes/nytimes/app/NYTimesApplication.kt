@@ -18,5 +18,6 @@ class NYTimesApplication:Application() {
             androidContext(this@NYTimesApplication)
             modules(listOf(appModules, repoModule, viewModelModule))
         }
+
     }
 }
